@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express'
 import pg from 'pg'
 const app = express();
 const port = 3000;
@@ -20,7 +20,7 @@ const pool = new Pool({
 app.get('/', (req, res, next) => {
     console.log("TEST DATA :");
     pool.query('Select * from biodata')
-        .then((result) => {
+        .then( testData => {
             console.log(testData);
             res.send(testData.rows);
         })
